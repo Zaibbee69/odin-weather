@@ -1,0 +1,27 @@
+{
+  "name": "odin-weather",
+  "version": "1.0.0",
+  "description": "This is a learning project for a weather app",
+  "keywords": [
+    "weather",
+    "free"
+  ],
+  "homepage": "https://github.com/Zaibbee69/odin-weather#readme",
+  "bugs": {
+    "url": "https://github.com/Zaibbee69/odin-weather/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zaibbee69/odin-weather.git"
+  },
+  "license": "ISC",
+  "author": "Zaibbee69",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@picocss/pico": "^2.1.1",
+    "animate.css": "^4.1.1"
+  }
+}

@@ -1,0 +1,78 @@
+@use "styles/aurora.scss";
+
+$black: #000000ff;
+$oxford-blue: #14213dff;
+$orange-web: #fca311ff;
+$platinum: #e5e5e5ff;
+$white: #ffffffff;
+
+%flexer-extender {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  background-color: $black;
+}
+
+header {
+  @extend %flexer-extender;
+  background-color: $black;
+}
+
+section#input-ctn {
+  background-color: $black;
+
+  @extend %flexer-extender;
+  flex-direction: column;
+
+  & > h2 {
+    position: relative;
+    font-size: 1.2rem;
+    margin-bottom: 5rem;
+    color: $platinum;
+    &::before {
+      position: absolute;
+      content: "";
+      background-color: $orange-web;
+      width: 100px;
+      height: 10px;
+      bottom: -55%;
+      border-radius: 6px;
+    }
+    &::after {
+      position: absolute;
+      content: "";
+      background-color: $oxford-blue;
+      width: 100px;
+      height: 10px;
+      bottom: -55%;
+      right: 0;
+      border-radius: 6px;
+    }
+  }
+
+  & > form {
+    margin-bottom: 2rem;
+    & > input {
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+footer {
+  background-color: $black;
+
+  text-align: center;
+}
+
+button {
+  &:hover {
+    background-color: $oxford-blue;
+  }
+}
+
+.material-symbols-outlined {
+  font-size: 4rem;
+}
