@@ -155,7 +155,72 @@
     border-radius: 37% 29% 27% 27%/28% 25% 41% 37%;
   }
 }
-section#input-ctn, header {
+.glass-card {
+  width: 240px;
+  height: 360px;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 -1px 0 rgba(255, 255, 255, 0.1), inset 0 0 4px 2px rgba(255, 255, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
+}
+
+.glass-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.8), transparent, rgba(255, 255, 255, 0.3));
+}
+
+.glass-box {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 -1px 0 rgba(255, 255, 255, 0.1), inset 0 0 4px 2px rgba(255, 255, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
+}
+
+.glass-box::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.8), transparent, rgba(255, 255, 255, 0.3));
+}
+
+section#input-ctn, main > section#days-ctn > .single-day, main > section#week-ctn > .day-ctn > hgroup, main > section#week-ctn > .day-ctn, main > section#weather-img-ctn, main > section#current-ctn > div > div,
+main > section#current-ctn > div hgroup, main > section#current-ctn > div, header > .header-name, header {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -163,10 +228,123 @@ section#input-ctn, header {
 
 body {
   background-color: black;
+  font-family: "Nunito", sans-serif !important;
 }
 
 header {
   background-color: black;
+}
+header .cloud {
+  font-size: 4rem;
+}
+header > .header-name {
+  font-size: 1rem;
+  margin-right: 1rem;
+  font-family: "Nunito", sans-serif;
+}
+header > .header-name > .location {
+  font-size: 1.6rem;
+  color: #fca311;
+}
+header > .header-date {
+  font-size: 0.8rem;
+}
+header > .header-date > mark {
+  background-color: #14213d;
+  border-radius: 2px;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 2fr 1fr;
+}
+main section {
+  padding: 20px;
+}
+main > section#current-ctn {
+  grid-row: 1;
+  grid-column: 1;
+}
+main > section#current-ctn .airwave,
+main > section#current-ctn .humidity {
+  color: #fca311;
+}
+main > section#current-ctn > div {
+  gap: 10px;
+}
+main > section#current-ctn > div > hgroup .current-temp {
+  font-family: "Ubuntu Mono", monospace;
+  font-size: 6rem;
+}
+main > section#current-ctn > div > hgroup .current-temp > sup {
+  color: #e5e5e5;
+}
+main > section#current-ctn > div > hgroup .current-conditions {
+  font-size: 1.2rem;
+}
+main > section#current-ctn > div > div,
+main > section#current-ctn > div hgroup {
+  gap: 10px;
+  flex-direction: column;
+}
+main > section#current-ctn > div > div > hgroup > h3 {
+  font-family: "Nunito", sans-serif;
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+main > section#current-ctn > div:first-child {
+  flex-direction: column;
+}
+main > section#weather-img-ctn {
+  grid-row: 1;
+  grid-column: 2;
+}
+main > section#weather-img-ctn > .cloud {
+  color: #fca311;
+  font-size: 12rem;
+  margin: 0;
+  padding: 0;
+}
+main > section#week-ctn {
+  grid-row: 1;
+  grid-column: 3;
+}
+main > section#week-ctn > .day-ctn {
+  gap: 4px;
+}
+main > section#week-ctn > .day-ctn > .day-icon {
+  color: #fca311;
+  font-size: 1rem;
+}
+main > section#week-ctn > .day-ctn > hgroup {
+  flex-direction: column;
+}
+main > section#week-ctn > .day-ctn > hgroup > h2 {
+  font-size: 0.8rem;
+}
+main > section#week-ctn > .day-ctn > hgroup > h3 {
+  font-size: 0.6rem;
+}
+main > section#week-ctn > .day-ctn > h3 {
+  font-size: 1rem;
+  font-family: "Ubuntu Mono", monospace;
+}
+main > section#days-ctn {
+  grid-row: 2;
+  grid-column: 1/-1;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+main > section#days-ctn > .single-day {
+  flex-direction: column;
+  padding: 10px;
+}
+main > section#days-ctn > .single-day > h1 {
+  font-size: 1rem;
+  font-family: "Ubuntu Mono", monospace;
+  color: #e5e5e5;
 }
 
 section#input-ctn {
@@ -212,8 +390,4 @@ footer {
 
 button:hover {
   background-color: #14213d;
-}
-
-.material-symbols-outlined {
-  font-size: 4rem;
 }

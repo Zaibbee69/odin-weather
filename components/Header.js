@@ -3,6 +3,7 @@ export default function Header() {
     header.innerHTML = `
         <h1 class="title">
             SkyCast
+            <span class="material-symbols-outlined cloud"> cloud </span>
             <div class="aurora">
             <div class="aurora__item"></div>
             <div class="aurora__item"></div>
@@ -10,8 +11,5 @@ export default function Header() {
             <div class="aurora__item"></div>
             </div>
         </h1>
-        <span class="material-symbols-outlined">
-            cloud
-            </span>
     `;
 }

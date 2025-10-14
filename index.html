@@ -5,10 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="color-scheme" content="light dark" />
 
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- Google Icons -->
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=cloud"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=airwave,cloud,humidity_high,location_on"
     />
 
     <!-- Pico CSS -->
@@ -25,10 +33,145 @@
   <body>
     <header class="container-fluid"></header>
 
-    <main></main>
+    <main>
+      <section id="current-ctn">
+        <div>
+          <hgroup>
+            <h1 class="current-temp">
+              16<sup><small>&deg;C</small></sup>
+            </h1>
+            <h2 class="current-conditions">Storm With Rain</h2>
+          </hgroup>
+        </div>
+        <div>
+          <div>
+            <hgroup>
+              <h3>
+                <span class="material-symbols-outlined airwave"> airwave </span
+                >Wind
+              </h3>
+              <h5>2.4 Km\h</h5>
+            </hgroup>
+          </div>
+          <div>
+            <hgroup>
+              <h3>
+                <span class="material-symbols-outlined humidity">
+                  humidity_high </span
+                >Humidity
+              </h3>
+              <h5>70%</h5>
+            </hgroup>
+          </div>
+        </div>
+      </section>
+      <section id="weather-img-ctn">
+        <span class="material-symbols-outlined cloud"> cloud </span>
+      </section>
+      <section class="glass-card" id="week-ctn">
+        <div class="day-ctn">
+          <span class="material-symbols-outlined day-icon"> cloud </span>
+
+          <hgroup>
+            <h2>Friday</h2>
+            <h3>Cloudy With Rain</h3>
+          </hgroup>
+
+          <h3>
+            16<sup><small>&deg;C</small></sup>
+          </h3>
+        </div>
+        <hr />
+        <div class="day-ctn">
+          <span class="material-symbols-outlined day-icon"> cloud </span>
+
+          <hgroup>
+            <h2>Friday</h2>
+            <h3>Cloudy With Rain</h3>
+          </hgroup>
+
+          <h3>
+            16<sup><small>&deg;C</small></sup>
+          </h3>
+        </div>
+        <hr />
+        <div class="day-ctn">
+          <span class="material-symbols-outlined day-icon"> cloud </span>
+
+          <hgroup>
+            <h2>Friday</h2>
+            <h3>Cloudy With Rain</h3>
+          </hgroup>
+
+          <h3>
+            16<sup><small>&deg;C</small></sup>
+          </h3>
+        </div>
+        <hr />
+        <div class="day-ctn">
+          <span class="material-symbols-outlined day-icon"> cloud </span>
+
+          <hgroup>
+            <h2>Friday</h2>
+            <h3>Cloudy With Rain</h3>
+          </hgroup>
+
+          <h3>
+            16<sup><small>&deg;C</small></sup>
+          </h3>
+        </div>
+        <hr />
+      </section>
+      <section id="days-ctn">
+        <div class="glass-box single-day">
+          <h1>1 PM</h1>
+          <hgroup>
+            <h2>
+              20<sup><small>&deg;C</small></sup>
+            </h2>
+            <h3>Cloudy</h3>
+          </hgroup>
+        </div>
+        <div class="glass-box single-day">
+          <h1>1 PM</h1>
+          <hgroup>
+            <h2>
+              20<sup><small>&deg;C</small></sup>
+            </h2>
+            <h3>Cloudy</h3>
+          </hgroup>
+        </div>
+        <div class="glass-box single-day">
+          <h1>1 PM</h1>
+          <hgroup>
+            <h2>
+              20<sup><small>&deg;C</small></sup>
+            </h2>
+            <h3>Cloudy</h3>
+          </hgroup>
+        </div>
+        <div class="glass-box single-day">
+          <h1>1 PM</h1>
+          <hgroup>
+            <h2>
+              20<sup><small>&deg;C</small></sup>
+            </h2>
+            <h3>Cloudy</h3>
+          </hgroup>
+        </div>
+        <div class="glass-box single-day">
+          <h1>1 PM</h1>
+          <hgroup>
+            <h2>
+              20<sup><small>&deg;C</small></sup>
+            </h2>
+            <h3>Cloudy</h3>
+          </hgroup>
+        </div>
+      </section>
+    </main>
 
     <section id="input-ctn" class="container"></section>
-    hello
     <footer>
       <p>Made with 💙 by <a href="https://github.com/Zaibbee69">Zaibbee</a></p>
     </footer>

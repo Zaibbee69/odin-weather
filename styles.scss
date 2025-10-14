@@ -1,10 +1,14 @@
 @use "styles/aurora.scss";
+@use "styles/glass.scss";
 
 $black: #000000ff;
 $oxford-blue: #14213dff;
 $orange-web: #fca311ff;
 $platinum: #e5e5e5ff;
 $white: #ffffffff;
+
+$ubuntuFont: "Ubuntu Mono", monospace;
+$nunitoFont: "Nunito", sans-serif;
 
 %flexer-extender {
   display: flex;
@@ -14,11 +18,158 @@ $white: #ffffffff;
 
 body {
   background-color: $black;
+  font-family: $nunitoFont !important;
 }
 
 header {
   @extend %flexer-extender;
   background-color: $black;
+
+  & .cloud {
+    font-size: 4rem;
+  }
+
+  & > .header-name {
+    @extend %flexer-extender;
+    font-size: 1rem;
+    margin-right: 1rem;
+    font-family: $nunitoFont;
+
+    & > .location {
+      font-size: 1.6rem;
+      color: $orange-web;
+    }
+  }
+
+  & > .header-date {
+    font-size: 0.8rem;
+
+    & > mark {
+      background-color: $oxford-blue;
+      border-radius: 2px;
+    }
+  }
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 2fr 1fr;
+
+  & section {
+    padding: 20px;
+  }
+
+  & > section#current-ctn {
+    grid-row: 1;
+    grid-column: 1;
+
+    & .airwave,
+    .humidity {
+      color: $orange-web;
+    }
+
+    & > div {
+      @extend %flexer-extender;
+      gap: 10px;
+
+      & > hgroup {
+        .current-temp {
+          font-family: $ubuntuFont;
+          font-size: 6rem;
+
+          & > sup {
+            color: $platinum;
+          }
+        }
+
+        .current-conditions {
+          font-size: 1.2rem;
+        }
+      }
+
+      & > div,
+      hgroup {
+        @extend %flexer-extender;
+        gap: 10px;
+        flex-direction: column;
+      }
+
+      & > div > hgroup > h3 {
+        font-family: $nunitoFont;
+        font-size: 1.2rem;
+        margin-top: 10px;
+      }
+    }
+
+    & > div:first-child {
+      flex-direction: column;
+    }
+  }
+  & > section#weather-img-ctn {
+    grid-row: 1;
+    grid-column: 2;
+    @extend %flexer-extender;
+
+    & > .cloud {
+      color: $orange-web;
+      font-size: 12rem;
+      margin: 0;
+      padding: 0;
+    }
+  }
+  & > section#week-ctn {
+    grid-row: 1;
+    grid-column: 3;
+
+    & > .day-ctn {
+      @extend %flexer-extender;
+      gap: 4px;
+
+      & > .day-icon {
+        color: $orange-web;
+        font-size: 1rem;
+      }
+
+      & > hgroup {
+        @extend %flexer-extender;
+        flex-direction: column;
+      }
+
+      & > hgroup > h2 {
+        font-size: 0.8rem;
+      }
+
+      & > hgroup > h3 {
+        font-size: 0.6rem;
+      }
+
+      & > h3 {
+        font-size: 1rem;
+        font-family: $ubuntuFont;
+      }
+    }
+  }
+  & > section#days-ctn {
+    // background-color: $oxford-blue;
+    grid-row: 2;
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+
+    & > .single-day {
+      @extend %flexer-extender;
+      flex-direction: column;
+      padding: 10px;
+
+      & > h1 {
+        font-size: 1rem;
+        font-family: $ubuntuFont;
+        color: $platinum;
+      }
+    }
+  }
 }
 
 section#input-ctn {
@@ -71,8 +222,4 @@ button {
   &:hover {
     background-color: $oxford-blue;
   }
-}
-
-.material-symbols-outlined {
-  font-size: 4rem;
 }
