@@ -1,6 +1,8 @@
-export default function SearchSection() {
+const SearchSection = (function () {
     const searchSection = document.getElementById("input-ctn");
-    searchSection.innerHTML = `
+
+    const init = () => {
+        searchSection.innerHTML = `
         <h2>Know the weather before it knows you.</h2>
         <form>
             <input
@@ -12,4 +14,17 @@ export default function SearchSection() {
             <button class="outline contrast" type="submit">Search</button>
         </form>
       `
-}
+    }
+
+    const removeSearchSection = () => {
+        searchSection.style.display = "none";
+    }
+
+    const addSearchSection = () => {
+        searchSection.style.display = "flex";
+    }
+
+    return { init, removeSearchSection, addSearchSection };
+})()
+
+export default SearchSection;

@@ -40,8 +40,7 @@ header {
       color: $orange-web;
     }
   }
-
-  & > .header-date {
+  s & > .header-date {
     font-size: 0.8rem;
 
     & > mark {
@@ -111,9 +110,9 @@ main {
     grid-column: 2;
     @extend %flexer-extender;
 
-    & > .cloud {
+    & > .current-icon {
       color: $orange-web;
-      font-size: 12rem;
+      font-size: 16rem;
       margin: 0;
       padding: 0;
     }
@@ -213,7 +212,7 @@ section#input-ctn {
 }
 
 footer {
-  background-color: $black;
+  background-color: $oxford-blue;
 
   text-align: center;
 }

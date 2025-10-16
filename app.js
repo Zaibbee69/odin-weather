@@ -1,31 +1,30 @@
 import LandingPage from "./pages/LandingPage.js";
 import IndexPage from "./pages/IndexPage.js";
-import ApiHandler from "./api/ApiHandler.js";
 
 const App = (function () {
 
-    let location, date;
-
+    let pageSwitch = true;
     const generateLandingPage = () => LandingPage.init();
-    const generateIndexPage = () => IndexPage.init(location, date);
+    const generateIndexPage = (location, date, currentTemp, currentConditions, currentWind, currentHumidity, daysData, hoursData, currentIcon) =>
+        IndexPage.init(location, date, currentTemp, currentConditions, currentWind, currentHumidity, daysData, hoursData, currentIcon);
 
-    const showWeather = async () => {
-        const weatherData = await ApiHandler.makeApiCall();
 
-        location = weatherData.location;
-        date = weatherData.daysData[0].date;
+    const switchPages = () => {
+        if (!pageSwitch) {
+            LandingPage.removeLandingPage();
+            IndexPage.addIndexPage();
+            showWeather();
+        }
 
-        generateIndexPage(location, date)
-        // Will do something here too
-        return weatherData;
+        if (pageSwitch) {
+            IndexPage.removeIndexPage();
+            LandingPage.addLandingPage();
+            generateLandingPage();
+        }
     }
 
+    return { generateLandingPage, generateIndexPage, showWeather, switchPages }
+})();
 
-
-
-    return { generateLandingPage, generateIndexPage, showWeather }
-})()
-
-// App.generateLandingPage();
-App.showWeather();
+App.switchPages();
 

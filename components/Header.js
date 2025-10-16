@@ -1,6 +1,9 @@
-export default function Header() {
+const Header = (function () {
+
     const header = document.querySelector("header");
-    header.innerHTML = `
+
+    const init = () => {
+        header.innerHTML = `
         <h1 class="title">
             SkyCast
             <span class="material-symbols-outlined cloud"> cloud </span>
@@ -12,4 +15,18 @@ export default function Header() {
             </div>
         </h1>
     `;
-}
+    }
+
+    const removeHeader = () => {
+        header.style.display = "none";
+    }
+
+    const addHeader = () => {
+        header.style.display = "flex";
+    }
+
+    return { init, removeHeader, addHeader }
+})();
+
+export default Header;
+

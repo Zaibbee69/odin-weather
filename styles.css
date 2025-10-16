@@ -300,9 +300,9 @@ main > section#weather-img-ctn {
   grid-row: 1;
   grid-column: 2;
 }
-main > section#weather-img-ctn > .cloud {
+main > section#weather-img-ctn > .current-icon {
   color: #fca311;
-  font-size: 12rem;
+  font-size: 16rem;
   margin: 0;
   padding: 0;
 }
@@ -384,7 +384,7 @@ section#input-ctn > form > input {
 }
 
 footer {
-  background-color: black;
+  background-color: #14213d;
   text-align: center;
 }
 
