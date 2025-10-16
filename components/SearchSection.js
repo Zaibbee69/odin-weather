@@ -4,12 +4,13 @@ const SearchSection = (function () {
     const init = () => {
         searchSection.innerHTML = `
         <h2>Know the weather before it knows you.</h2>
-        <form>
+        <form id="location-form">
             <input
             type="search"
             name="search"
             placeholder="Search"
             aria-label="Search"
+            id="city-search"
             />
             <button class="outline contrast" type="submit">Search</button>
         </form>

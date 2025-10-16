@@ -10,8 +10,9 @@ export default function generateFourDays(daysData) {
     .map((day) => {
       const dayName = getDayName(day.date);
       const iconName = getWeatherIcon(day.icon);
+      console.log("icon: ", iconName);
       return `
-        <div class="day-ctn">
+        <div class="day-ctn animate__animated animate__fast animate__fadeInUp">
           <span class="material-symbols-outlined day-icon">${iconName}</span>
           <hgroup>
             <h2>${dayName}</h2>

@@ -226,9 +226,27 @@ main > section#current-ctn > div hgroup, main > section#current-ctn > div, heade
   align-items: center;
 }
 
+html,
+body {
+  height: 100%;
+  min-height: 100vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   background-color: black;
   font-family: "Nunito", sans-serif !important;
+}
+
+.styler {
+  position: absolute;
+  padding: 0px;
+  font-size: 10rem;
+  margin-left: 20px;
+  bottom: 40%;
+  color: #fca311;
 }
 
 header {
@@ -246,15 +264,16 @@ header > .header-name > .location {
   font-size: 1.6rem;
   color: #fca311;
 }
-header > .header-date {
-  font-size: 0.8rem;
+s header > .header-date {
+  font-size: 0.6rem;
 }
-header > .header-date > mark {
+s header > .header-date > mark {
   background-color: #14213d;
   border-radius: 2px;
 }
 
 main {
+  background-color: black;
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
   grid-template-rows: 2fr 1fr;
@@ -263,6 +282,7 @@ main section {
   padding: 20px;
 }
 main > section#current-ctn {
+  background-color: black;
   grid-row: 1;
   grid-column: 1;
 }
@@ -297,6 +317,7 @@ main > section#current-ctn > div:first-child {
   flex-direction: column;
 }
 main > section#weather-img-ctn {
+  background-color: black;
   grid-row: 1;
   grid-column: 2;
 }
@@ -307,6 +328,7 @@ main > section#weather-img-ctn > .current-icon {
   padding: 0;
 }
 main > section#week-ctn {
+  background-color: black;
   grid-row: 1;
   grid-column: 3;
 }
@@ -331,6 +353,7 @@ main > section#week-ctn > .day-ctn > h3 {
   font-family: "Ubuntu Mono", monospace;
 }
 main > section#days-ctn {
+  background-color: black;
   grid-row: 2;
   grid-column: 1/-1;
   display: grid;

@@ -1,6 +1,6 @@
 import generateFourDays from "../helpers/generateFourDays.js";
 
-const WeekSection = (function (daysData) {
+const WeekSection = (function () {
 
     const weekSectionCtn = document.getElementById("week-ctn");
 

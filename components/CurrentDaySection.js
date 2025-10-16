@@ -1,4 +1,4 @@
-const CurrentDaySection = (function (currentTemp, currentConditions, currentWind, currentHumidity) {
+const CurrentDaySection = (function () {
     const currentDayCtn = document.getElementById("current-ctn");
 
     const removeCurrentDayCtn = () => {
@@ -11,7 +11,7 @@ const CurrentDaySection = (function (currentTemp, currentConditions, currentWind
 
     const init = (currentTemp, currentConditions, currentWind, currentHumidity) => {
         currentDayCtn.innerHTML = `
-        <div>
+        <div animate__animated animate__fast animate__flipInX>
             <hgroup>
                 <h1 class="current-temp">
                 ${currentTemp}<sup><small>&deg;C</small></sup>

@@ -1,6 +1,6 @@
 import generateFiveHours from "../helpers/generateFiveHours.js";
 
-const HoursSection = (function (hoursData) {
+const HoursSection = (function () {
 
     const hoursSectionCtn = document.getElementById("days-ctn");
 

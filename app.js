@@ -2,17 +2,31 @@ import LandingPage from "./pages/LandingPage.js";
 import IndexPage from "./pages/IndexPage.js";
 import ApiHandler from "./api/ApiHandler.js";
 
-const App = (function () {
-
+const App = (() => {
     let location, date, currentTemp, currentConditions, currentWind, currentIcon, currentHumidity, daysData, hoursData;
     let pageSwitch = false;
-    const generateLandingPage = () => LandingPage.init();
+
+    const switchPages = () => {
+        const styler = document.querySelector(".styler");
+        if (!pageSwitch) {
+            LandingPage.removeLandingPage();
+            IndexPage.addIndexPage();
+            styler.style.display = "none";
+            pageSwitch = true;
+        } else {
+            init();
+            pageSwitch = false;
+            styler.style.display = "block";
+
+        }
+    };
+
     const generateIndexPage = (location, date, currentTemp, currentConditions, currentWind, currentHumidity, daysData, hoursData, currentIcon) =>
         IndexPage.init(location, date, currentTemp, currentConditions, currentWind, currentHumidity, daysData, hoursData, currentIcon);
 
-    const showWeather = async () => {
-        const weatherData = await ApiHandler.makeApiCall();
-        console.log("Time:", weatherData.daysData[0].hours)
+    const showWeather = async (loc) => {
+        const weatherData = await ApiHandler.makeApiCall(loc);
+
         location = weatherData.location;
         date = weatherData.daysData[0].date;
         currentTemp = weatherData.currentData.temperature;
@@ -23,25 +37,18 @@ const App = (function () {
         daysData = weatherData.daysData;
         hoursData = weatherData.daysData[0].hours;
 
+        switchPages()
+
         generateIndexPage(location, date, currentTemp, currentConditions, currentWind, currentHumidity, daysData, hoursData, currentIcon);
-    }
+    };
 
-    const switchPages = () => {
-        if (!pageSwitch) {
-            LandingPage.removeLandingPage();
-            IndexPage.addIndexPage();
-            showWeather();
-        }
+    const init = () => {
+        IndexPage.removeIndexPage();
+        LandingPage.addLandingPage();
+        LandingPage.init(showWeather);
+    };
 
-        if (pageSwitch) {
-            IndexPage.removeIndexPage();
-            LandingPage.addLandingPage();
-            generateLandingPage();
-        }
-    }
-
-    return { generateLandingPage, generateIndexPage, showWeather, switchPages }
+    return { init, showWeather, switchPages };
 })();
 
-App.switchPages();
-
+App.init();

@@ -7,7 +7,7 @@ export default function generateFiveHours(hoursData) {
 
   const html = fiveHours
     .map(hour => `
-      <div class="glass-box single-day">
+      <div class="glass-box single-day animate__animated animate__slow animate__flipInX">
         <h1>${timeParse(hour.time)}</h1>
         <hgroup>
           <h2>${Math.round(hour.temperature)}<sup><small>°C</small></sup></h2>
