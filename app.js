@@ -40,6 +40,9 @@ const App = (() => {
         switchPages()
 
         generateIndexPage(location, date, currentTemp, currentConditions, currentWind, currentHumidity, daysData, hoursData, currentIcon);
+
+        const goBackBtn = document.getElementById("go-back");
+        goBackBtn.addEventListener("click", () => switchPages())
     };
 
     const init = () => {

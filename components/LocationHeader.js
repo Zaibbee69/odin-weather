@@ -1,7 +1,7 @@
 import dateParse from "../helpers/dateParse.js";
 
 
-const LocationHeader = (function (location = "England, UK", date = "Friday, 13th") {
+const LocationHeader = (function () {
     const header = document.querySelector("header");
 
     const addLocationHeader = () => {
@@ -17,13 +17,24 @@ const LocationHeader = (function (location = "England, UK", date = "Friday, 13th
     const init = (location, date) => {
         const parsedDate = dateParse(date);
 
-        header.innerHTML = `<h2 class="header-name animate__animated animate__slideInLeft animate__fast">
+        header.innerHTML = `
+
+        <button id="go-back" class="outline contrast"><span class="material-symbols-outlined">
+line_start_arrow
+</span></button>
+        
+        <h2 class="header-name animate__animated animate__slideInLeft animate__fast">
             <span class="material-symbols-outlined location"> location_on </span>
             ${location}
         </h2>
         <h3 class="header-date animate__animated animate__slideInRight animate__fast">
             <mark><small>${parsedDate}</small></mark>
-        </h3>`;
+        </h3>
+        
+                        
+
+
+        `;
     }
 
     return { init, addLocationHeader, removeLocationHeader }

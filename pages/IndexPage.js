@@ -6,7 +6,6 @@ import WeatherImgSection from "../components/WeatherImgSection.js";
 
 const IndexPage = (function () {
 
-
     const removeIndexPage = () => {
         LocationHeader.removeLocationHeader()
         CurrentDaySection.removeCurrentDayCtn()
